@@ -1,0 +1,21 @@
+p {
+    color: blue;
+    font-size: 60px;
+};
+.welcome-section{
+    background: grey;
+    color: blue;
+  };
+
+.profile-section{
+    background: rgb(151, 218, 160);
+      
+};
+
+.song-section{
+      background: rgb(248, 151, 151);
+};
+
+.challenge-section{
+      background: rgb(175, 191, 243);
+};
