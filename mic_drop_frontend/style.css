@@ -1,27 +1,14 @@
-
-.welcome-section{
-    background-color: grey;
-    color: blue;
-  };
-
-.profile-section{
-    background-color: rgb(25, 170, 44);
-      
-};
-
+.song-wrapper{
+    background-color: rgb(107, 107, 107);
+    display: grid;
+}
 .song-section{
-    background-color: rgb(204, 29, 29);
-};
+    background: white;
+    border-color: blue;
+    padding: 30px;
+}
+h3 {
+    color: red;
+}
 
-.challenge-section{
-    background-color: rgb(35, 66, 167);
-};
 
-body {
-    color: blue;
-};
-
-p {
-    color: blue;
-    font-size: 60px
-};
