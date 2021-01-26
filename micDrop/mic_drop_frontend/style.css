@@ -1,0 +1,27 @@
+
+.welcome-section{
+    background-color: grey;
+    color: blue;
+  };
+
+.profile-section{
+    background-color: rgb(25, 170, 44);
+      
+};
+
+.song-section{
+    background-color: rgb(204, 29, 29);
+};
+
+.challenge-section{
+    background-color: rgb(35, 66, 167);
+};
+
+body {
+    color: blue;
+};
+
+p {
+    color: blue;
+    font-size: 60px
+};
