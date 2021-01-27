@@ -1,8 +1,11 @@
+const BASE_URL = "http://localhost:3000/users"
+
 function fetchUsers(){
-    fetch('http://localhost:3000/users')
+    fetch(BASE_URL)
     .then(res => res.json()) 
-    .then(users => {
+    .then((users) => {
         users.forEach(renderUser)
+        // console.log(users))
     })
 }
 
@@ -12,12 +15,15 @@ function renderUser(user){
     let userDiv = document.createElement("div")
     div.appendChild(userDiv)
 
-    userDiv.classList.add("ui", "card")
+    userDiv.classList.add("flip-card")
     userDiv.innerHTML = `
-            <div class="image">
-            <img src="https://p.kindpng.com/picc/s/78-785904_block-chamber-of-commerce-avatar-white-avatar-icon.png">
-        </div>
-        <div class="content">
-            <a class="header">${user.name}</a>
+            <div class="flip-card-inner">
+            <div class="flip-card-front">
+            <img src=${user.image} height=100%>
+            </div>
+            <div class="flip-card-back">
+            <h1>${user.name}</h1>
+            </div>
             </div>`
+
 }
