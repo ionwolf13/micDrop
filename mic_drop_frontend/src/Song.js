@@ -1,12 +1,14 @@
 const songsUrl = 'http://localhost:3000/songs'
 let songArray = []
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("This is the song js file")
-    // getSongsTheOriginalWay()
-    getSongsTheFancyWay()
-    renderEachSong()
-})
+// document.addEventListener("DOMContentLoaded", () => {
+//     console.log("This is the song js file")
+//     // // getSongsTheOriginalWay()
+//     // songSectionFunction()
+//     // getSongsTheFancyWay()
+//     // renderEachSong()
+    
+// })
 
 // *****************************************
 // this is the original way we Fetch()
@@ -32,14 +34,26 @@ async function getSongsTheFancyWay(){
 
 }
 
+function renderTheSongSection(){
+    indexBodySection.innerHTML = `
+    <section class="song-wrapper">
+                <h2>Choose A Song!</h2>
+                    <div class="song-section">
+                        
+                    </div>
+            </section>`
+            getSongsTheFancyWay()
+}
+
 function renderEachSong(song){
+    
     let {id,name,artist,difficulty,time,genre} = song
     console.log("We are inside the Render Each Song Part")
         
 
     let songSection = document.querySelector('.song-section')
     let singleSongCard = document.createElement('div')
-    singleSongCard.className = `song-number-${id}`
+    singleSongCard.className = `individual-song-section`
 
     let songName = document.createElement('h3')
     songName.className = "song"
@@ -65,10 +79,22 @@ function renderEachSong(song){
     pushButton.innerText = "Accept Challenge"
     pushButton.addEventListener('click',(event)=>{
         console.log("Challenge is Accepted!")
+        console.log(song)
+        songObjectInformation(song)
     })
-    console.log(singleSongCard)
+    // console.log(singleSongCard)
     singleSongCard.append(songName,songArtist,songGenre,songTime,songDifficulty,pushButton)
     songSection.appendChild(singleSongCard)
     
 }
 
+function songObjectInformation(song){
+    let {id,name,artist,difficulty,time,genre} = song
+    console.log(name)
+    console.log(artist)
+    console.log(difficulty)
+    console.log(genre)
+    indexBodySection.innerHTML = ""
+    renderChallengeSection(song)
+    
+}
