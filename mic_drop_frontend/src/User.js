@@ -10,10 +10,11 @@ function fetchUsers(){
 }
 
 function renderUser(user){
-    console.log(user)
+    // console.log(user)
     let div = document.querySelector(".challenge-section")
     let userDiv = document.createElement("div")
     div.appendChild(userDiv)
+
 
     userDiv.classList.add("flip-card")
     userDiv.innerHTML = `
