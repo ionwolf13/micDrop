@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+User.delete_all
 
 # Users Data
-    User.create(name: "Joy")
-    User.create(name: "Evans")
-    User.create(name: "Jesus")
-    User.create(name: "Garcia")
+    User.create(name: "Raul",   image:"image/RaulFurbyNightMareFuel.png")
+    User.create(name: "Angelo", image:"image/ICantStopNow.png")
+    User.create(name: "Adam",   image:"image/OneofUs.png")
+    User.create(name: "Dane",   image:"image/WhatHaveIDone.png")
 
 
 
