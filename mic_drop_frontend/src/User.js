@@ -1,10 +1,14 @@
 const BASE_URL = "http://localhost:3000/users"
 
+let currentUser = ""
+
 function fetchUsers(){
     fetch(BASE_URL)
     .then(res => res.json()) 
     .then((users) => {
-        users.forEach(renderUser)
+        // users.forEach(renderUser)
+        debugger
+        currentUser = users
         // console.log(users))
     })
 }
