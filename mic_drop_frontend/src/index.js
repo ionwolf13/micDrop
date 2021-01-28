@@ -36,7 +36,7 @@ function welcomeFunction(){
         
         
     })
-    
+    fetchUsers()
 }
 
 // Reference to Push To GitHub
