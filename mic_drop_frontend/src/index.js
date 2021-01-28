@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
 function welcomeFunction(){
     indexBodySection.innerHTML = `
     <section class="welcome-wrapper">
-        <h2 id="welcome-message">Welcome To MicDrop!!!</h2>
+        
+        <img src="image/micDroplogo.png" height=100%>
                 <div class="welcome-section">
                         <div class="form-section">
                             <form class="name-form"> 
