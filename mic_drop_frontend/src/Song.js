@@ -23,7 +23,7 @@ let songArray = []
 // *****************************************
 // this is the fancy way that Adam taught us to Fetch()
 async function getSongsTheFancyWay(){
-
+    
     const response = await fetch(songsUrl)
     const songData = await response.json()
     console.log("This is the Fancy Way")
@@ -41,8 +41,17 @@ function renderTheSongSection(){
                     <div class="song-section">
                         
                     </div>
+                    <button class="profile-button">Profile</button>
             </section>`
             getSongsTheFancyWay()
+    let profileButton = document.querySelector(".profile-button")
+    profileButton.addEventListener('click', () => {
+        console.log("I was clicked")
+        console.log(currentUser)
+        console.log(status)
+        fetchSingleUser()
+    })
+
 }
 
 function renderEachSong(song){
@@ -82,6 +91,8 @@ function renderEachSong(song){
         console.log(song)
         songObjectInformation(song)
     })
+    
+    
     // console.log(singleSongCard)
     singleSongCard.append(songName,songArtist,songGenre,songTime,songDifficulty,pushButton)
     songSection.appendChild(singleSongCard)
@@ -96,5 +107,5 @@ function songObjectInformation(song){
     console.log(genre)
     indexBodySection.innerHTML = ""
     renderChallengeSection(song)
-    
+    console.log(allUserArr)
 }
