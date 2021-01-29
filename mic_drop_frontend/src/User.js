@@ -61,15 +61,36 @@ function renderUserSection(){
 }
 
 function renderUser(user){
-    // console.log(user)
-    if(user === currentUser){
+    console.log("does user match currentUser?")
+    console.log(user == currentUser)
+    console.log(user === currentUser)
+    // debugger
+    if(user == currentUser){
         let challengesSection = document.querySelector('.challenges-completed')
     
         user.challenges.forEach(challenge => {
+            let songDiv = document.createElement('div')
+            songDiv.className = `challenge-id-${challenge.id}`
             let songChallenge = document.createElement('p')
+            let songScore = document.createElement('p')
+            let deleteChallengeButton = document.createElement('button')
+
+            deleteChallengeButton.className = "delete-challenge-button"
+            deleteChallengeButton.value = "Remove"
+            deleteChallengeButton.innerText = "Remove"
+                deleteChallengeButton.addEventListener('click', (event) => {
+                    console.log(challenge.song_id)
+                    console.log(user)
+                    removeChallenge(challenge)
+                })
             // console.log(allSongArray.find(song => song.id == challenge.song_id))
-            songChallenge.innerText = (allSongArray.find(song => song.id == challenge.song_id).name)
-            challengesSection.appendChild(songChallenge)
+            songChallenge.className = `${challenge.id}`
+            songChallenge.innerText = `Song: ${(allSongArray.find(song => song.id == challenge.song_id).name)}`
+            songScore.innerText = `Score: ${challenge.score}`
+            console.log("Here is the challenge score!!!!!!!!")
+            console.log(challenge.score)
+            songDiv.append(songChallenge,songScore,deleteChallengeButton)
+            challengesSection.appendChild(songDiv)
         
         })
 
@@ -98,8 +119,8 @@ function renderUser(user){
             </div>
             <div class="flip-card-back">
             <h1>${user.name}</h1>
-            <p>Hobbies: Singer</p>
-            <p>Rating: 4.5</p>
+            <p>Hobbies: ${user.hobbies}</p>
+            <p>Rating: ${user.rating}</p>
             </div>
             </div>`
 
@@ -127,7 +148,7 @@ function createNewUser(userName){
     console.log('dont exist so we here')
     let newUser = {
         name: userName,
-        image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8cGljdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'
+        // image: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8cGljdHVyZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'
     }
 
     let reqPackage = {
@@ -138,8 +159,8 @@ function createNewUser(userName){
     console.log('we are about to create you')
     fetch(BASE_URL, reqPackage)
     .then(res => res.json())
-    .then(res => console.log(res))
-
+    .then(res => renderUser(res))
+    
 }
 
 
@@ -172,7 +193,8 @@ function otherChallengers(){
     let profileButton = document.querySelector(".profile-button")
     profileButton.addEventListener('click', () => {
         console.log("i clicked the back to profile button")
-        fetchSingleUser()
+        renderUserSection()
+        renderUser(currentUser)
     })
     allUserArr.forEach(user => {
         if(user !== currentUser){
