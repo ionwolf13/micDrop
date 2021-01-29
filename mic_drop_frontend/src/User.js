@@ -22,11 +22,18 @@ function fetchSingleUser(){
 function renderUserSection(){
     indexBodySection.innerHTML = `
     <section class="profile-wrapper">
+    <h2 class="profile-message">Profile</h2>
         <div class="profile-section">
-            <h2 class="profile-message">Profile</h2>
+            
         </div>
         <div class="profile-challenges">
-            <h2 class="profile-challenge-message">Challenges Completed</h2>
+            <h2 class="profile-challenge-message">Challenges</h2>
+                <div class="challenges-completed">
+                    <h3 class="challenges-completed-message">Finished:</h3>
+                </div>
+                <div class="challenges-to-be-completed">
+                    <h3 class="challenges-to-be-completed-message">To be Started:</h3>
+                </div>
         </div>
         <div class="checkout-songs">
             <p>Check Out Our Songs!</p>
@@ -51,6 +58,27 @@ function renderUserSection(){
 
 function renderUser(user){
     // console.log(user)
+    if(user === currentUser){
+        let challengesSection = document.querySelector('.challenges-completed')
+    
+        user.challenges.forEach(challenge => {
+            let songChallenge = document.createElement('p')
+            // console.log(allSongArray.find(song => song.id == challenge.song_id))
+            songChallenge.innerText = (allSongArray.find(song => song.id == challenge.song_id).name)
+            challengesSection.appendChild(songChallenge)
+        
+        })
+
+        
+        let challengesToStart = document.querySelector('.challenges-to-be-completed')
+    
+        let songChallenge = document.createElement('p')
+        // console.log(allSongArray.find(song => song.id == challenge.song_id))
+        songChallenge.innerText = "Challenges to Be Completed Will be Inserted Here"
+        challengesToStart.appendChild(songChallenge)
+    }
+    
+
 
     
     let div = document.querySelector(".profile-section")
@@ -66,6 +94,8 @@ function renderUser(user){
             </div>
             <div class="flip-card-back">
             <h1>${user.name}</h1>
+            <p>Hobbies: Singer</p>
+            <p>Rating: 4.5</p>
             </div>
             </div>`
 

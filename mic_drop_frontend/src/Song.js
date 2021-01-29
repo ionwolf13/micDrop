@@ -1,6 +1,15 @@
 const songsUrl = 'http://localhost:3000/songs'
-let songArray = []
+let allSongArray = []
 
+async function getSongsTheFirstTime(){
+    
+    const response = await fetch(songsUrl)
+    const songData = await response.json()
+    songData.forEach(song =>{
+        allSongArray.push(song)
+    })
+
+}
 // document.addEventListener("DOMContentLoaded", () => {
 //     console.log("This is the song js file")
 //     // // getSongsTheOriginalWay()
@@ -56,6 +65,7 @@ function renderTheSongSection(){
 
 function renderEachSong(song){
     
+    
     let {id,name,artist,difficulty,time,genre} = song
     console.log("We are inside the Render Each Song Part")
         
@@ -107,5 +117,4 @@ function songObjectInformation(song){
     console.log(genre)
     indexBodySection.innerHTML = ""
     renderChallengeSection(song)
-    console.log(allUserArr)
 }

@@ -12,6 +12,7 @@ class ChallengesController < ApplicationController
 
     def create
         challenge = Challenge.create(challenge_params(:user_id, :song_id))
+        render json: challenge
     end
 
     private
