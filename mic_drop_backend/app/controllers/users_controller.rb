@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     def index
-        # users = User.all
+        users = User.all
         render json: User.all.to_json({include: [:songs, :challenges], except: [:created_at, :updated_at]})
     end
 
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
     def create
         user = User.create(user_params(:name))
+        render json: user
     end
 
 
