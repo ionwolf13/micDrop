@@ -1,7 +1,6 @@
 const indexBodySection = document.querySelector('body')
 
 document.addEventListener('DOMContentLoaded', function(){
-    console.log("This is the index.js")
     getSongsTheFirstTime()
     // fetchUsers()
     indexBodySection.innerHTML =''

@@ -20,6 +20,114 @@ body{
     align-items: center;
 
 }
+.song-wrapper h2{
+  width: 400px;
+    height: 40px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px red;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: 10;
+    align-items: center;
+    font-family: "Audiowide", sans-serif;
+      
+}
+@keyframes example {
+    12.5% {
+        color: #FF0000;
+        text-shadow: 5px 5px 5px #FF0000;
+        text-shadow: -5px -5px 5px #FF0000;
+      }
+      25% {
+        color: #FFA500;
+        text-shadow: 5px 5px 5px #FFA500;
+        text-shadow: -5px -5px 5px #FFA500;
+      }
+      37.5% {
+        color: #FFFF00;
+        text-shadow: 5px 5px 5px #FFFF00;
+        text-shadow: -5px -5px 5px #FFFF00;
+      }
+      50% {
+        color: #7FFF00;
+        text-shadow: 5px 5px 5px #7FFF00;
+        text-shadow: -5px -5px 5px #7FFF00;
+      }
+      62.5% {
+        color: #00FFFF;
+        text-shadow: 5px 5px 5px #00FFFF;
+        text-shadow: -5px -5px 5px #00FFFF;
+      }
+      75% {
+        color: #0000FF;
+        text-shadow: 5px 5px 5px #0000FF;
+        text-shadow: -5px -5px 5px #0000FF;
+      }
+      87.5% {
+        color: #9932CC;
+        text-shadow: 5px 5px 5px #9932CC;
+        text-shadow: -5px -5px -5px #9932CC;
+      }
+      100% {
+        color: #FF1493;
+        text-shadow: 5px 5px 5px #FF1493;
+        text-shadow: 5px 5px 5px #FF1493;
+      }
+}
+.profile-message{
+    width: 400px;
+    height: 40px;
+    color: rgb(255, 0, 0);
+    text-shadow: 2px 2px 5px red;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: 10;
+    align-items: center;
+    font-family: "Audiowide", sans-serif;
+      
+}
+@keyframes example {
+    12.5% {
+        color: #FF0000;
+        text-shadow: 5px 5px 5px #FF0000;
+        text-shadow: -5px -5px 5px #FF0000;
+      }
+      25% {
+        color: #FFA500;
+        text-shadow: 5px 5px 5px #FFA500;
+        text-shadow: -5px -5px 5px #FFA500;
+      }
+      37.5% {
+        color: #FFFF00;
+        text-shadow: 5px 5px 5px #FFFF00;
+        text-shadow: -5px -5px 5px #FFFF00;
+      }
+      50% {
+        color: #7FFF00;
+        text-shadow: 5px 5px 5px #7FFF00;
+        text-shadow: -5px -5px 5px #7FFF00;
+      }
+      62.5% {
+        color: #00FFFF;
+        text-shadow: 5px 5px 5px #00FFFF;
+        text-shadow: -5px -5px 5px #00FFFF;
+      }
+      75% {
+        color: #0000FF;
+        text-shadow: 5px 5px 5px #0000FF;
+        text-shadow: -5px -5px 5px #0000FF;
+      }
+      87.5% {
+        color: #9932CC;
+        text-shadow: 5px 5px 5px #9932CC;
+        text-shadow: -5px -5px -5px #9932CC;
+      }
+      100% {
+        color: #FF1493;
+        text-shadow: 5px 5px 5px #FF1493;
+        text-shadow: 5px 5px 5px #FF1493;
+      }
+}
 #welcome-message{
     width: 400px;
     height: 100px;
@@ -273,7 +381,17 @@ filter: hue-rotate(360deg);
     color: white;
   }
   .challenges-completed{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    width:500px;
+    height: 600px;
+    justify-content: space-between;
+    /* justify-content: */
     color: white;
+  }
+  .challenges-completed-message{
+    flex: 1;
   }
   .challenges-to-be-completed{
     color: white;
@@ -580,4 +698,34 @@ footer p{
   100%{
     filter: hue-rotate(360deg);
   }
+}
+.delete-challenge-button{
+  position: absolute;
+  width: 70px;
+  height: 25px;
+  margin: 10;
+  /* border-radius: 50%; */
+  background: red;
+  
+}
+.delete-challenge-button:hover{
+  box-shadow: 0 0 10px red;
+  animation: glowy 2s linear infinite;
+}
+@keyframes glowy{
+  from{box-shadow: 0 0 20px red;}
+  to{box-shadow:0 0 200px red;}
+  
+  
+}
+.profile-challenge-message{
+  box-shadow: 0 0 10px blue;
+  animation: glowythingy 2s linear infinite;
+}
+
+@keyframes glowythingy{
+  from{box-shadow: 0 0 20px blue;}
+  to{box-shadow:0 0 200px blue;}
+  
+  
 }

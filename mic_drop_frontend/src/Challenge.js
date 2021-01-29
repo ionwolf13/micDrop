@@ -100,3 +100,6 @@ function addNewChallengeToUser(song){
 }
 
 
+function removeChallenge(challenge){
+    console.log("I am going to remove this")
+}

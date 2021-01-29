@@ -61,7 +61,8 @@ function renderTheSongSection(){
         console.log("I was clicked")
         console.log(currentUser)
         console.log(status)
-        fetchSingleUser()
+        renderUserSection()
+        renderUser(currentUser)
     })
 }, 10000);
 
