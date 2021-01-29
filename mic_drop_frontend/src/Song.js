@@ -44,6 +44,9 @@ async function getSongsTheFancyWay(){
 }
 
 function renderTheSongSection(){
+    loaderHTMLJSFunction()
+    setTimeout(() => {
+
     indexBodySection.innerHTML = `
     <section class="song-wrapper">
                 <h2>Choose A Song!</h2>
@@ -60,12 +63,12 @@ function renderTheSongSection(){
         console.log(status)
         fetchSingleUser()
     })
+}, 10000);
 
 }
 
-function renderEachSong(song){
-    
-    
+function renderEachSong(song){  
+
     let {id,name,artist,difficulty,time,genre} = song
     console.log("We are inside the Render Each Song Part")
         
@@ -95,6 +98,7 @@ function renderEachSong(song){
     songDifficulty.id = "difficulty"
     songDifficulty.innerText = `Diff: ${difficulty}`
     let pushButton = document.createElement('button')
+    pushButton.className = "accept-challenge-button"
     pushButton.innerText = "Accept Challenge"
     pushButton.addEventListener('click',(event)=>{
         console.log("Challenge is Accepted!")
@@ -106,7 +110,7 @@ function renderEachSong(song){
     // console.log(singleSongCard)
     singleSongCard.append(songName,songArtist,songGenre,songTime,songDifficulty,pushButton)
     songSection.appendChild(singleSongCard)
-    
+
 }
 
 function songObjectInformation(song){

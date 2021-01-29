@@ -5,10 +5,14 @@ let status = null
 
 
 function fetchUsers(userName){
+
+    loaderHTMLJSFunction()
+    setTimeout(() => {        
     renderUserSection()
     fetch(BASE_URL)
     .then(res => res.json())
     .then(users => findUser(users,userName))
+    }, 10000);
 }
 
 function fetchSingleUser(){
@@ -140,6 +144,10 @@ function createNewUser(userName){
 
 
 function otherChallengers(){
+    loaderHTMLJSFunction()
+    setTimeout(() => {
+        
+                
     console.log("here are the others")
     indexBodySection.innerHTML = `
     <section class="profile-wrapper">
@@ -171,4 +179,5 @@ function otherChallengers(){
             renderUser(user)
         }
     })
+}, 10000);
 }
