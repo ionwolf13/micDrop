@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_01_25_210225) do
   create_table "challenges", force: :cascade do |t|
     t.integer "user_id"
     t.integer "song_id"
+    t.float "score", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -32,7 +33,9 @@ ActiveRecord::Schema.define(version: 2021_01_25_210225) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "image"
+    t.string "image", default: "image/The4Horsemen.png"
+    t.string "hobbies", default: "singer"
+    t.float "rating", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
