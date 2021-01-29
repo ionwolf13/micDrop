@@ -9,10 +9,13 @@
 User.delete_all
 
 # Users Data
-    User.create(name: "Raul",   image:"image/RaulFurbyNightMareFuel.png")
-    User.create(name: "Angelo", image:"image/ICantStopNow.png")
-    User.create(name: "Adam",   image:"image/OneofUs.png")
-    User.create(name: "Dane",   image:"image/WhatHaveIDone.png")
+    User.create(name: "Raul",   image:"image/RaulFurbyNightmareFuel.png", hobbies: "Testing Is Free")
+    User.create(name: "Angelo", image:"image/ICantStopNow.png", hobbies: "Yeet Yeet")
+    User.create(name: "Adam",   image:"image/OneOfUs.png", hobbies: "Cowboy Bebop")
+    User.create(name: "Dane",   image:"image/WhatHaveIDone.png", hobbies: "Musician")
+    User.create(name: "Joy",   image:"image/joyFurby.png")
+    User.create(name: "Jesus",   image:"image/jesusFurby.png")
+    
 
 
 
@@ -30,12 +33,18 @@ User.delete_all
 
 # Challenges Data
 
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
-    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id)
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
+    Challenge.create(user_id: User.all.sample.id, song_id: Song.all.sample.id, score:rand(1...10))
 
 puts "Done"
 

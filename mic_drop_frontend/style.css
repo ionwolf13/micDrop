@@ -94,7 +94,7 @@ h2{
     color: white;
 }
 .song-wrapper{
-    background-color: black;
+    /* background-color: ; */
     display: grid;
     border-radius: 30px;
     width: 400px;
@@ -260,9 +260,11 @@ filter: hue-rotate(360deg);
   
   /* Style the back side */
   .flip-card-back {
-    background-color: black;
+    background-image: url(https://image.freepik.com/free-photo/colorful-background-chalk-powder-color-dust-particles-splattered-white-background_36326-2427.jpg);
+    /* background-color: black; */
     color: white;
     transform: rotateY(180deg);
+    background-position: center;
   }
   .profile-message{
     color: white;
@@ -325,7 +327,7 @@ footer p{
   left: 0;
   width: 15px;
   height: 15px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: #00ff0a;
   box-shadow: 0 0 10px #00ff0a,
               0 0 20px #00ff0a,

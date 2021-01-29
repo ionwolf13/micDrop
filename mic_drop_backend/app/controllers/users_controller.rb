@@ -6,12 +6,22 @@ class UsersController < ApplicationController
     end
 
     def show
-        # user = User.find_or_create_by(params[:id])
+        user = User.find_or_create_by(params[:id])
         render json: User.find(params[:id]).to_json({include: [:songs, :challenges]})
     end
 
     def create
         user = User.create(user_params(:name))
+        render json: user
+    end
+
+    def update
+        user = User.create(user_params(:name,:hobbies))
+        render json: user
+    end
+
+    def delete
+        user = User.create(user_params(:name,:hobbies,:image))
         render json: user
     end
 
